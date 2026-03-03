@@ -844,6 +844,7 @@ ddk_headers(
     hdrs = [
         ":all_headers_allowlist_aarch64_globs",
         ":all_headers_allowlist_common_globs",
+        "drivers/kernelsu/**/*.h",
     ],
     # The list of include directories where source files can #include headers
     # from. In other words, these are the `-I` option to the C compiler.
@@ -853,6 +854,7 @@ ddk_headers(
         "arch/arm64/include/uapi",
         "include",
         "include/uapi",
+        "drivers/kernelsu",
     ],
     visibility = ["//visibility:private"],
 )
@@ -968,4 +970,10 @@ ddk_headers(
     # Unsafe include directories are appended to ccflags-y.
     includes = [],
     visibility = ["//visibility:private"],
+)
+
+filegroup(
+    name = "kernelsu_sources",
+    srcs = glob(["drivers/kernelsu/**/*"]),
+    visibility = ["//visibility:public"],
 )
