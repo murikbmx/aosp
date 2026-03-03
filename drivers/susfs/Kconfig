@@ -1,0 +1,6 @@
+config SUSFS
+    bool "Sultan's Universal Suhide File System"
+    default y
+    help
+      Enable support for SUSFS, which allows hiding files and directories 
+      from user-space processes.

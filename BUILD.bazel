@@ -845,6 +845,7 @@ ddk_headers(
         ":all_headers_allowlist_aarch64_globs",
         ":all_headers_allowlist_common_globs",
         "drivers/kernelsu/**/*.h",
+        "drivers/susfs/**/*.h",
     ],
     # The list of include directories where source files can #include headers
     # from. In other words, these are the `-I` option to the C compiler.
@@ -855,6 +856,7 @@ ddk_headers(
         "include",
         "include/uapi",
         "drivers/kernelsu",
+        "drivers/susfs",
     ],
     visibility = ["//visibility:private"],
 )
