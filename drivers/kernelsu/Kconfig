@@ -1,20 +1,22 @@
 menu "KernelSU"
 
 config KSU
-	tristate "KernelSU function support"
-	depends on KPROBES
-	default y
-	help
-	  Enable kernel-level root privileges on Android System.
-	  Requires CONFIG_KPROBES for kernel hooking support.
-	  To compile as a module, choose M here: the
-	  module will be called kernelsu.
+tristate "KernelSU function support"
+depends on KPROBES
+default y
 
 config KSU_DEBUG
-	bool "KernelSU debug mode"
-	depends on KSU
-	default n
-	help
-	  Enable KernelSU debug mode.
+bool "KernelSU debug mode"
+depends on KSU
+default n
+
+config KSU_NEXT
+bool "Enable KernelSU Next"
+default y
+
+config KSU_SUSFS
+bool "Enable KSU SUSFS Integration"
+depends on SUSFS
+default y
 
 endmenu
